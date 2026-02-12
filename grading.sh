@@ -15,7 +15,7 @@ while read -r WUSTL_KEY; do
  
     if [ -f "$STUDENT_OUTPUT" ]; then
         
-        if  diff -q "$STUDENT_OUTPUT" "../$EXPECTED_OUTPUT" >/dev/null  ; then
+        if  [$(diff $STUDENT_OUTPUT $EXPECTED_OUTPUT)] ; then
             SCORE=1
         fi
     fi
